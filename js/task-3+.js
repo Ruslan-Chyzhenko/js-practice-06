@@ -34,8 +34,8 @@
 // 	room: 191
 // };
 
-// За допомогою методу 'call' ми можемо викликати функцію 'greet' так, 
-// щоб значення 'this' вказувало на потрібний об'єкт 
+// За допомогою методу 'call' ми можемо викликати функцію 'greet' так,
+// щоб значення 'this' вказувало на потрібний об'єкт
 // і використовувало значення його властивостей.
 
 // greet.call(mango, "Welcome"); // "Welcome, Mango, your room is 27!"
@@ -50,20 +50,29 @@
 // };
 
 
-function greet(str) {
-  console.log(`${str}, ${this.username}, your room is ${this.room}!`);
-}
+// function greet(str) {
+//   console.log(`${str}, ${this.username}, your room is ${this.room}!`);
+// }
 
-const mango = {
-  username: "Mango",
-	room: 27
+// const mango = {
+//   username: "Mango",
+// 	room: 27
+// };
+
+// const poly = {
+//   username: "Poly",
+// 	room: 191
+// };
+
+// greet.apply(mango, ["Welcome"]); // "Welcome, Mango, your room is 27!"
+// greet.apply(poly, ["Aloha"]); // "Aloha, Poly, your room is 191!"
+
+const animal = {
+  legs: 4,
 };
 
-const poly = {
-  username: "Poly",
-	room: 191
-};
+const dog = Object.create(animal);
+dog.name = "Mango";
 
-greet.apply(mango, ["Welcome"]); // "Welcome, Mango, your room is 27!"
-greet.apply(poly, ["Aloha"]); // "Aloha, Poly, your room is 191!"
+console.log(dog); // { name: "Mango", [[Prototype]]: animal }
 
