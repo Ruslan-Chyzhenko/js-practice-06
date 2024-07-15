@@ -67,12 +67,17 @@
 // greet.apply(mango, ["Welcome"]); // "Welcome, Mango, your room is 27!"
 // greet.apply(poly, ["Aloha"]); // "Aloha, Poly, your room is 191!"
 
-const animal = {
-  legs: 4,
-};
+// const animal = {
+//   legs: 4,
+// };
 
-const dog = Object.create(animal);
-dog.name = "Mango";
+// const dog = Object.create(animal);
+// dog.name = "Mango";
 
-console.log(dog); // { name: "Mango", [[Prototype]]: animal }
+// console.log(dog); // { name: "Mango", [[Prototype]]: animal }
 
+const saveBtn = document.querySelector('button[data-action="save"]');
+console.log(saveBtn.dataset.action); // "save"
+
+const closeBtn = document.querySelector('button[data-action="close"]');
+console.log(closeBtn.dataset.action); // "close"
